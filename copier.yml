@@ -123,4 +123,4 @@ _tasks:
   - [pwsh, .tooling/scripts/init_template.ps1]
   - [git, add, "."]
   - [git, commit, -m, Copy initial template]
-  - [copier, gh:blakeNaccarato/copier-python, .]
+  - [copier, -f]
