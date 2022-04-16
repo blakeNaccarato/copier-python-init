@@ -44,6 +44,7 @@ include_funding:
   type: bool
   help: "Include GitHub Sponsors link for {{ project_owner_github_username }}?"
   default: no
+
 # * -------------------------------------------------------------------------------- # *
 # * OVERRIDES
 
@@ -113,6 +114,9 @@ override_pytest:
   type: bool
   help: "Override: pytest.ini"
   default: no
+
+# * -------------------------------------------------------------------------------- # *
+# * TASKS
 
 _tasks:
   - [pwsh, .tooling/scripts/init_template.ps1]
