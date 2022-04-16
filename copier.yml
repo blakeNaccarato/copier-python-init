@@ -1,0 +1,121 @@
+_min_copier_version: "6.0.0a9"
+
+_subdirectory: template
+
+_envops:
+  keep_trailing_newline: true
+
+project_owner_github_username:
+  type: str
+  help: The username of the GitHub user hosting this project.
+  default:
+
+project_owner_name:
+  type: str
+  help: The name (or names) that will populate the LICENSE file if not the username above.
+  default: "{{ project_owner_github_username }}"
+
+year_of_project_creation:
+  type: int
+  help: The year in which this project was created. For the LICENSE file.
+  default: 2022
+
+github_repo_name:
+  type: str
+  help: The name of the GitHub repo hosting this project.
+  default:
+
+project_name:
+  type: str
+  help: The name of this project, if it is different from the repo name above.
+  default: "{{ github_repo_name }}"
+
+project_email:
+  type: str
+  help: The email address that will be associated with this project. If you'd like, type your regular email address before the "+", messages will still come to your inbox but they will have the {{ project_name }} suffix!
+  default: +{{ project_name }}@gmail.com
+
+python_version:
+  type: str
+  help: This project will only support a Python version at least this high.
+  default: "3.10"
+
+include_funding:
+  type: bool
+  help: "Include GitHub Sponsors link for {{ project_owner_github_username }}?"
+  default: no
+# * -------------------------------------------------------------------------------- # *
+# * OVERRIDES
+
+override:
+  type: bool
+  help: Do you want to override any template files?
+  default: no
+
+# Overrides
+
+override_vscode_settings:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .vscode/settings"
+  default: no
+
+override_vscode_extensions:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .vscode/extensions"
+  default: no
+
+override_vscode_launch:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .vscode/launch"
+  default: no
+
+override_vscode_tasks:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .vscode/tasks"
+  default: no
+
+override_coveragerc:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .coveragerc"
+  default: no
+
+override_env:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .env"
+  default: no
+
+override_flake8:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .flake8"
+  default: no
+
+override_gitattributes:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .gitattributes"
+  default: no
+
+override_pyrightconfig:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: pyrightconfig.json"
+  default: no
+
+override_pytest:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: pytest.ini"
+  default: no
+
+_tasks:
+  - [pwsh, .tooling/scripts/init_template.ps1]
+  - [git, add, "."]
+  - [git, commit, -m, Copy initial template]
+  - [copier, gh:blakeNaccarato/copier-python, .]
