@@ -12,4 +12,4 @@ $lookahead = '(?=\s)'  # "#]]\n" (have to use \s instead of \n)
 
 $original = $original -replace "$lookbehind_commit$match$lookahead", $replace_commit
 $original = $original -replace "$lookbehind_repo$match$lookahead", $replace_repo |
-    Set-Content -NoNewline -Path test
+    Set-Content -NoNewline -Path .copier-answers.yml
