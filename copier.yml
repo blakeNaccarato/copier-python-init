@@ -119,6 +119,7 @@ override_pytest:
 # * TASKS
 
 _tasks:
+  - [pwsh, .tooling/scripts/merge_gitignore.ps1]
   - [pwsh, .tooling/scripts/init_template.ps1]
   - [git, add, "."]
   - [git, commit, -m, Copy initial template]
