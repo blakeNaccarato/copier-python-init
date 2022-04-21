@@ -9,6 +9,9 @@
 #[[
 #]]
 
+# Don't commit this duplicate of our answers. It's only used once on project creation.
+.copier-answers-init.yml
+
 # * -------------------------------------------------------------------------------- * #
 # * Partial Node.gitignore
 # *
