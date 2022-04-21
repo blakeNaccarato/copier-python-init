@@ -1,3 +1,5 @@
+_answers_file: .copier-init-answers.yml
+
 _min_copier_version: "6.0.0a9"
 
 _subdirectory: template
@@ -114,12 +116,3 @@ override_pytest:
   type: bool
   help: "Override: pytest.ini"
   default: no
-
-# * -------------------------------------------------------------------------------- # *
-# * TASKS
-
-_tasks:
-  - [pwsh, .tools/scripts/init_template.ps1]
-  - [git, add, "."]
-  - [git, commit, -m, Copy initial template]
-  - [copier, -f]
