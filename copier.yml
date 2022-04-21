@@ -119,7 +119,7 @@ override_pytest:
 # * TASKS
 
 _tasks:
-  - [pwsh, .tooling/scripts/init_template.ps1]
+  - [pwsh, .tools/scripts/init_template.ps1]
   - [git, add, "."]
   - [git, commit, -m, Copy initial template]
   - [copier, -f]
