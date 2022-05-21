@@ -25,4 +25,4 @@ Remove-Item $original_answers_file
 Remove-Item 'task.ps1'
 
 # Run copier
-copier copy gh:blakeNaccarato/copier-python
+copier copy gh:blakeNaccarato/copier-python .
