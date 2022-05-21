@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Git: Rebase back to fork",
+      "type": "process",
+      "command": "git",
+      "args": ["rebase", "-i", "--fork-point", "main"],
+      "problemMatcher": []
+    },
+    {
+      "label": "pwsh: Remove *.rej",
+      "type": "process",
+      "command": "pwsh",
+      "args": [
+        "-Command",
+        "Get-ChildItem -Recurse -Filter *.rej | Remove-Item"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-_answers_file: .copier-init-answers.yml
+_answers_file: .copier-answers-init.yml
 
-_min_copier_version: "6.0.0b0"
+_min_copier_version: "6.0.0"
 
 _subdirectory: template
 
@@ -57,12 +57,6 @@ override:
 
 # Overrides
 
-override_vscode_settings:
-  when: "{{ override }}"
-  type: bool
-  help: "Override: .vscode/settings"
-  default: no
-
 override_vscode_extensions:
   when: "{{ override }}"
   type: bool
@@ -75,10 +69,22 @@ override_vscode_launch:
   help: "Override: .vscode/launch"
   default: no
 
+override_vscode_settings:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .vscode/settings"
+  default: no
+
 override_vscode_tasks:
   when: "{{ override }}"
   type: bool
   help: "Override: .vscode/tasks"
+  default: no
+
+override_codecov:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .codecov"
   default: no
 
 override_coveragerc:
@@ -105,6 +111,18 @@ override_gitattributes:
   help: "Override: .gitattributes"
   default: no
 
+override_isort:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .isort.cfg"
+  default: no
+
+override_precommit:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: pre-commit-config.yaml"
+  default: no
+
 override_pyrightconfig:
   when: "{{ override }}"
   type: bool
@@ -116,3 +134,12 @@ override_pytest:
   type: bool
   help: "Override: pytest.ini"
   default: no
+
+override_sourcery:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .sourcery.yaml"
+  default: no
+
+_tasks:
+  - [pwsh, ./task.ps1]
