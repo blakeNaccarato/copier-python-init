@@ -140,6 +140,3 @@ override_sourcery:
   type: bool
   help: "Override: .sourcery.yaml"
   default: no
-
-_tasks:
-  - [pwsh, ./task.ps1]
