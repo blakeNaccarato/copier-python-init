@@ -163,6 +163,3 @@ override_sourcery:
   type: bool
   help: "Override: .sourcery.yaml"
   default: no
-
-tasks:
-  - "rm .copier-answers-init.yml"
