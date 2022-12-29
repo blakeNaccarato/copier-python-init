@@ -167,3 +167,6 @@ override_sourcery:
   type: bool
   help: "Override: .sourcery.yaml"
   default: no
+
+_tasks:
+  - git submodule add https://github.com/blakeNaccarato/pylance-stubs-unofficial.git typings
