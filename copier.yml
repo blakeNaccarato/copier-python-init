@@ -1,5 +1,3 @@
-_answers_file: .copier-answers-init.yml
-
 _min_copier_version: "7.0.1"
 
 _subdirectory: template
@@ -138,6 +136,12 @@ override_isort:
   when: "{{ override }}"
   type: bool
   help: "Override: .isort.cfg"
+  default: no
+
+override_markdownlint:
+  when: "{{ override }}"
+  type: bool
+  help: "Override: .markdownlint.yaml"
   default: no
 
 override_precommit:
