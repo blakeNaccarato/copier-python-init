@@ -18,7 +18,7 @@ project_owner_name:
 year_of_project_creation:
   type: int
   help: The year in which this project was created. For the LICENSE file.
-  default: 2022
+  default: 2023
 
 github_repo_name:
   type: str
@@ -32,19 +32,19 @@ project_name:
 
 project_email:
   type: str
-  help: The email address that will be associated with this project. If you'd like, type your regular email address before the "+", messages will still come to your inbox but they will have the {{ project_name }} suffix!
-  default: +{{ project_name }}@gmail.com
+  help: The email address associated with this project (e.g. for publishing on PyPI). If omitted, no email will be used.
 
 python_version:
   type: str
   help: This project will only support a Python version at least this high.
   default: "3.11"
 
-docs_engine:
+actions_runner:
   when: "{{ advanced }}"
   type: str
-  help: "Which documentation engine should be used?"
+  help: "Which GitHub Actions runner should be used?"
   choices:
-    - "MyST"
-    - "Jupyter Book"
-  default: "MyST"
+    - "ubuntu-latest"
+    - "windows-latest"
+    - "macos-latest"
+  default: "ubuntu-latest"
