@@ -7,5 +7,6 @@ git add -A
 git commit -m "Add template and type stub submodules"
 git submodule deinit --all
 copier gh:blakeNaccarato/copier-python . -f
+& ./setup.ps1
 git add -A
 git commit -m "Initialize template using blakeNaccarato/copier-python"
