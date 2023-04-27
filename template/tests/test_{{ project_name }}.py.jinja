@@ -1,5 +1,3 @@
-import {{ project_name }}
-
-
-def test():
-    {{ project_name }}.__version__
+def test_import():
+    """Trivial test that the package is importable."""
+    import {{ project_name }}  # noqa: F401
