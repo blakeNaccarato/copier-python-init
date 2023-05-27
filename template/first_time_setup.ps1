@@ -5,7 +5,7 @@ git submodule add https://github.com/blakeNaccarato/copier-python.git template
 git submodule add https://github.com/blakeNaccarato/pylance-stubs-unofficial.git typings
 git add -A
 git commit -m "Add template and type stub submodules"
-git submodule deinit --all
+git submodule deinit template
 copier gh:blakeNaccarato/copier-python . -f
 & ./setup.ps1
 git add -A
